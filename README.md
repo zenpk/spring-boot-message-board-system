@@ -44,6 +44,16 @@ The logic of the whole project is as shown below:
 
 ![system-logic](./system-logic.png)
 
+## Usage
+
+The simplest way: 
+
+- Manually install MySQL database on either your PC or server, set username = "root", password = "root"
+- Create a database "sms" (you can customize it in "application.properties")
+- Leave the port as default (3306)
+- Either run the whole project or use Maven to package a .jar file
+- Now you can access the system through "localhost:3000" or "SERVER_IP:3000" (you can change the port in "application.properties")
+
 ## Warnings
 
 Given that this is a small project, some drawbacks are ignored for convenience, including:
