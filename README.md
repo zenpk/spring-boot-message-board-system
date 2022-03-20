@@ -30,12 +30,13 @@ Besides the basic functions described above, there are some more, including:
 
 4. Permission control as below:
 
-   | Roles                          | ADMIN | USER  | GUEST |
-   | ------------------------------ | ----- | ----- | ----- |
-   | Post/Read Message              | **✓** | **✓** | **✓** |
-   | Edit/Delete GUEST Message      | **✓** | **✓** | **✓** |
-   | Edit/Delete USER (own) Message | **✓** | **✓** |       |
-   | Edit/Delete ADMIN Message      | **✓** |       |       |
+   | Roles                              | ADMIN | USER  | GUEST |
+   | ---------------------------------- | ----- | ----- | ----- |
+   | Post/Read Message                  | **✓** | **✓** | **✓** |
+   | Edit/Delete GUEST Message          | **✓** | **✓** | **✓** |
+   | Edit/Delete USER (own) Message     | **✓** | **✓** |       |
+   | Edit/Delete USER (others') Message | **✓** |       |       |
+   | Edit/Delete ADMIN Message          | **✓** |       |       |
 
 ## Program logic
 
