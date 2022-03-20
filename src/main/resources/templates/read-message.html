@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Message Board System</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Message Board System</a>
+</nav>
+<br>
+<br>
+
+<div class="container">
+    <h1 th:text="${message.title}"></h1>
+    <p>
+        <span class="text-muted" th:text="${message.createTime}"> </span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;by: </span>
+        <span class="text font-weight-bold" th:text="${message.author}"></span>
+        <br>
+    </p>
+    <p th:text="${message.content}"></p>
+    <a class="btn btn-primary" th:href="@{/index}">Back</a>
+</div>
+</body>
+</html>

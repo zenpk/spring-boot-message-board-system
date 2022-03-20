@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Message Board System</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Message Board System</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <span class="navbar-text font-weight-bold" style="color:#FFFFFF">Hi, </span>
+            <span class="navbar-text font-weight-bold" style="color:#FFFFFF" th:text="${username}"></span>
+            <a class="navbar-text" th:href="@{/logout}"> | logout</a>
+        </li>
+    </ul>
+
+</nav>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <h1>Message List</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-success mb-3 mt-1" th:href="@{/index/create}">Post a New Message</a>
+        </div>
+        <div class="col">
+            <div th:if="${param.permission}">
+                <div class="alert alert-danger">Sorry, you don't have the permission.</div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Message Title</th>
+            <th>Sent Time</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="message:${messages}">
+            <td th:text="${message.title}"></td>
+            <td th:text="${message.createTime}"></td>
+            <td th:text="${message.author}"></td>
+            <td>
+                <a class="btn btn-primary" th:href="@{/index/read/{id}(id=${message.id})}">Details</a>
+                <a class="btn btn-primary" th:href="@{/index/update/{id}(id=${message.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/index/delete/{id}(id=${message.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
